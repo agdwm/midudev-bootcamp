@@ -5,20 +5,30 @@ import Content from './components/Content.jsx'
 import Total from './components/Total.jsx'
 
 const App = () => {
-  const contents = [
-    { part: 'Fundamentals of React', exercises: 10 },
-    { part: 'Using props to pass data', exercises: 7 },
-    { part: 'State of a component', exercises: 14 }]
+  const course = 'Half Stack application development'
+  const parts = [
+    { 
+      name: 'Fundamentals of React', 
+      exercises: 10
+    },
+    { 
+      name: 'Using props to pass data', 
+      exercises: 7 
+    },
+    { 
+      name: 'State of a component', 
+      exercises: 14 
+    }]
 
-  const result = contents.reduce((acc, obj) => acc + obj.exercises, 0)
+  const total = parts.reduce((acc, obj) => acc + obj.exercises, 0)
 
   return (
     <div>
-      <Header course='Half Stack application development' />
-      {contents.map((content, i) =>
-        <Content part={content.part} exercises={content.exercises} key={i} />
+      <Header course={course} />
+      {parts.map((part, i) =>
+        <Content part={part.name} exercises={part.exercises} key={i} />
       )}
-      <Total total={result} />
+      <Total total={total} />
     </div>
   )
 }
