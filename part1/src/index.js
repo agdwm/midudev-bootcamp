@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Button from './components/Button.jsx'
-import Statistic from './components/Statistic.jsx'
 import Statistics from './components/Statistics.jsx'
+import Statistic from './components/Statistic.jsx'
 
 const App = () => {
   // save clicks of each button to its own state
@@ -26,7 +26,6 @@ const App = () => {
   const handleClickBad = () => {
     setBad(bad+1) 
   }
-
 
   return (
     <div>

@@ -1,11 +1,13 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 
 const Statistics = ({ all, children, mssg, title }) => {
-    return (
-        <Fragment>
-            <h3>{title}</h3>
-            {all > 0 ? children : mssg}
-        </Fragment>
+  return (
+    all > 0 ?
+      <table>
+        <thead>{title}</thead>
+        <tbody>{children}</tbody>
+      </table> 
+    : <p>{mssg}</p>
     )
 }
 
